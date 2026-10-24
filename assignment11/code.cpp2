@@ -1,0 +1,16 @@
+ #include<iostream>
+using namespace std;
+template<class T>
+T add(T m,T n)
+{return(m+n);}
+template<class T>
+T sub(T m,T n)
+{return(m-n);}
+int main()
+{
+    cout<<"\nthe add is \t";
+    cout<<add<double>(5.3,6.3);
+    cout<<"\nthe sub is \t";
+    cout<<sub<double>(6.4,2.1);
+    return 0;
+}
