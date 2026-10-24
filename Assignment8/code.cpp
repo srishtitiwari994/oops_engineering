@@ -1,36 +1,68 @@
-:#include <iostream> using namespace std;
+ #include <iostream>
+#include <string>
+using namespace std;
+
+class BasicInfo
+{
+private:
+    string name;
+    int age;
+
+public:
+    void acceptBasicInfo()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter age: ";
+        cin >> age;
+    }
+
+    void dispBasicInfo()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+
+class deptInfo
+{
+private:
+    string nameofdept;
+    string natureofwork;
+
+public:
+    void acceptDeptInfo()
+    {
+        cout << "Enter department: ";
+        cin >> nameofdept;
+        cout << "Enter nature of work: ";
+        cin >> natureofwork;
+    }
+
+    void dispDeptInfo()
+    {
+        cout << "Department: " << nameofdept << endl;
+        cout << "Nature of work: " << natureofwork << endl;
+    }
+};
+
+class Employee : public BasicInfo, public deptInfo
+{
+public:
+    void display()
+    {
+        dispBasicInfo();
+        dispDeptInfo();
+    }
+};
 
 int main()
 {
-int a, b, c;
+    Employee e;
 
-cout << "Enter the no. a: "; cin >> a;
+    e.acceptBasicInfo();
+    e.acceptDeptInfo();
+    e.display();
 
-cout << "Enter the no. b: "; cin >> b;
-
- 
-try
-{
- 
-
-
-// Check if b is zero if(b == 0)
-{
- 
-throw b;
+    return 0;
 }
-
-// Perform division c = a / b;
-cout << "\nDiv is " << c;
-}
-
-// Catch the error catch(int x)
-{
-cout << "Arithmetic error\n"; cout << "Divide by " << x;
-}
- 
-// Program continues after exception cout << "\nAfter div op.";
-
-return 0;
-}
-
